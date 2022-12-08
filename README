@@ -1,0 +1,24 @@
+TO RUN SCRIPTS:
+
+python app.py
+
+
+USED DATA SOURCES:
+
+AAPL Intraday - https://eodhistoricaldata.com/api/intraday/AAPL.US
+ISS Location - https://api.wheretheiss.at/v1/satellites/25544/positions
+
+
+OUTPUT FILES:
+
+correlation_iss.csv - Spearman correlation coefficient, p-values, name of ISS location parameter
+
+
+API REQUEST:
+
+curl -i -X GET http://"0.0.0.0:5000/corr/api/iss" 
+
+
+API RESPONSE FORMAT:
+
+{"success":True,"variable":"latitude,longitude,altitude,x_coord,y_coord,z_coord","correlation":"0.1,0.1,0.1,0.1,0.1,0.1","pvalue":"0.1,0.1,0.1,0.1,0.1,0.1"}
